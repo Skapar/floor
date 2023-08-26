@@ -1,15 +1,14 @@
 @import url('https://www.dafontfree.net/embed/bWVsb2Rib2xkLWJvbGQmZGF0YS8zOC9tLzExNjg3MC9tZWxvZGJvXy50dGY');
 
 body{
-    font-family: Arial, sans-serif;
+    font-family: 'melodbold', sans-serif;
     text-align: center;
     /* background-color: #f0f0f0; */
+    /* min-height: 200vh; */
     overflow-x: hidden;
-    min-height: 490vh;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
+
 }
 body::-webkit-scrollbar {
     display: none;
@@ -53,15 +52,12 @@ h6 {
 	
 }
 
-a {
-    color: #333;
-}
-
 p {
     margin: 8px 0;
 }
 /* NAVBAR */
 .navbar{
+    position: fixed;
     display: flex;
     width: 100%;
     height: 38px;
@@ -69,9 +65,8 @@ p {
     z-index: 9;
     top: 0;
     left: 0;
-    right: 0;
+    /* right: 0; */
     text-align: center;
-
     border-bottom: 2px solid #222;
     background: #222;
 }
@@ -81,8 +76,29 @@ p {
     height: 33.83px;
     flex-shrink: 0;
 }
+/* box shadow start */
+.box-shadow-menu {
+    position: relative;
+    right: 100%;
+    top: 5%;
+    display: inline-block;
+    padding: 10px;
+}
+.box-shadow-menu img{
+    width: 40%;;
+}
+
+  .box-shadow-menu:before {
+    content: "";
+    width: 1.5em;
+    height: 0.15em;
+    
+  }
+
+
+/* box shadow end*/
 .selected-language {
-    position: absolute;
+    position: relative;
     display: inline-block;
     cursor: pointer;
     align-items: center;
@@ -108,6 +124,118 @@ p {
 .language-options{
     list-style: none;
 }
+
+/* overlay start */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 9; /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  .openburger{
+    background: transparent;
+    max-width: 3%;
+    display: flex;
+    position: fixed;
+    top: calc(5%-10px);
+    left: 90%;
+    cursor: pointer;
+
+    background-color: red;
+
+    /* border: 4px solid rgb(255, 255, 255); */
+    border-radius: 5%;
+  }
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+    
+/*  */
+
+/*  */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+/*  */
 /* navbar end  */
 
 
@@ -117,101 +245,85 @@ p {
     margin-bottom: 5px;
 }
 .allmarkups {
-    position: absolute;
-    width: 10%;
-    height: auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
     left: 20%;
-    top: 16%;
-}
-.markup img{
-    width: 100%;
-    height: auto;
+    margin-top: 100px;
 }
 
-.floor-image-container{
-	position: absolute;
-    width: 50%;
-    height: 2200px;
-	left: -1%;
-	margin-top: 100px;
+.markup img{
+    max-width: 25%;
+    height: auto;
 }
-/* .floorimg {
+/* floor img */
+.floor-img{
     width: 100%;
     height: auto;
-} */
+}
+.floor-image-container{
+    margin-top: 20px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10px;
+}
 
 .floor-image-container img{
-	width: 100%;
+	width: 60%;
 	height: auto;
+    margin-bottom: 70px;
+}
+.floor-image-container .imgfive{
+    position: relative;
+    width: 45%;
+    left: -15%;
 }
 
 /* floor - details start */
 .floor-details-container {
-	position: absolute;
-    width: 40%;
-	right: 1%;
-	margin-top: 3%;
-    flex: 1;
+    position: relative;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-family: 'melodbold-bold, 'sans-serif;
-    font-weight: 900;
 }
 
-.floor {
+.rooms-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
-}
-.floor-number{
-    font-size: 45px;
-}
-.fifth{
-    /* position: absolute ; */
-    left: 30%;
-    /* top: 0.5%; */
-}
-
-.floor-number{
-    position: absolute;
-    display: flex;
-    align-items: flex-start;
-    left: -5%;
-}
-.floor-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.floor-circles {
-    display: flex;
     align-items: center;
+    gap: 20px;  /* This is for spacing between the rooms, you can adjust as needed */
 }
 
 .room {
     display: flex;
     align-items: center;
-    margin: 10px;
-    /* margin-left: 5%; */
+    gap: 10px;
+    margin-bottom: 20px;
 }
-.room-name {
+.room-name{
     text-align: left;
-}
-.room-locate{
-    position: relative;
-    font-size: 10px;
-    color: #999;
 }
 
-.room-number {
-    position: absolute;
-    display: flex;
-    text-align: left;
-    align-items: flex-end;
-    left: 80%;
+.floor-number{
+    font-size: 40px;
 }
+.room-number{
+    position: relative;
+    left: 40%;
+    text-align: left;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+.room-locate{
+    font-size: smaller;
+    color: rgb(224, 178, 178)
+}
+
 .circle {
     height: 30px;
     width: 30px;
@@ -249,46 +361,9 @@ p {
 .ten{
     background: #000;
 }
-.room-name {
-    margin-right: 10px;
-}
 
-.room-number {
-    margin-right: 10px;
-}
 /* end of description */
 
-/* buttons */
-.buttons {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.buttons .panfilova,
-.buttons .abylaikhan,
-.buttons .tolebi,
-.buttons .kazybekbi {
-    position: absolute;
-    top: /* Set this to the y-coordinate of the button's position */;
-    left: 30% /* Set this to the x-coordinate of the button's position */;
-}
-
-.buttons button {
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-}
-
-.buttons button img {
-    width: 100%;
-    height: auto;
-}
-/* end buttons */
 
 /* footer */
 footer {
@@ -297,7 +372,8 @@ footer {
 	padding: 40px 0;
 	display: block;
 	width: 100%;
-    flex-shrink: 0;  
+    margin-top: 20px;
+    /* flex-shrink: 0;   */
 
 }
 
@@ -373,76 +449,144 @@ footer .ft-bottom {
 	color: #999;
 }
 
-    @media only screen and (max-width: 1000px) {
-        
+@media only screen and (max-width: 374px) {
+    .box-shadow-menu {
+        position: relative;
+        left: 38%;
+        padding: 10px;
+
+    }
+}
+  @media only screen and (min-width: 374px) and (max-width: 424px) {
+    .box-shadow-menu {
+        position: relative;
+        left: 48%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 425px) and (max-width: 576px) {
+    .box-shadow-menu {
+        position: relative;
+        left: 52%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .box-shadow-menu {
+        /* Styles for portrait tablets here */
+        position: relative;
+        left: 68%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .box-shadow-menu {
+        /* Styles for landscape tablets here */
+        position: relative;
+        left: 68%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .box-shadow-menu {
+        /* Styles for small laptops here */
+        position: relative;
+        left: 73%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .box-shadow-menu {
+        /* Styles for laptops & desktops here */
+        left: 76%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .box-shadow-menu {
+        /* Styles for laptops & desktops here */
+        left: 87%;
+        padding: 10px;
+    }
+}
+@media only screen and (min-width: 2500px) {
+    .box-shadow-menu {
+        /* Styles for laptops & desktops here */
+        left: 84%;
+        padding: 10px;
+    }
+}
+/*   floor-details   */
+@media only screen and (max-width: 426px) {
+    .floor-details-container {
+        position: relative;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     
-    @media only screen and (max-width: 600px) {
-        body{
-            min-height: 205vh;
-        }
-        .allmarkups{
-            top: 10%;
-            left: 30%;
-        }
-        .floor-details-container {
-            position: absolute;
-            right: 0px;
-            display: block; /* Ensure it's not set to 'none' */
-            z-index: 10; /* Bring to front, just in case something else is overlapping */
-            width: 55%; /* Take full width */
-            overflow: hidden; /* If there's too much content, make it scrollable */
-            font-family: 'melodbold bold', 'sans serif';
-            margin-top: 10px; /* Some spacing from the image */
-        }
-        .circle {
-            height: 5px;
-            width: 5px;
-            margin-right: 3px;
-            padding: 5px;
-            /* background-color: #555; */
-            border-radius: 50%;
-        }
+    .rooms-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;  /* This is for spacing between the rooms, you can adjust as needed */
+    }
+    
+    .room {
+        display: flex;
+        /* align-items: flex-start; */
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .room-name h5{
+        font-size: 13px;
+    }
+    
+    .floor-number{
+        font-size: 40px;
+    }
+    .room-number{
+        position: absolute;
+        left: 80%;
+        text-align: left;
+        justify-content: flex-start;
+    
+        font-size: 10px;
+        font-weight: 600;
+    }
+    .room-locate{
+        font-size: 10px;
+        color: rgb(224, 178, 178)
+    }
+    
+    .circle {
+        height: 20px;
+        width: 20px;
         
-        .room-name h5{
-            font-size: 10px;
-        }
-        .room {
-            width: 100%;
-            height: auto;
-            margin: 2px;
-            
-        }
-        .floor{
-            margin-bottom: 0;
-        }
-        .room-number{
-            position: absolute;
-            left: 80%;
-            font-size: 7px;
-            font-weight: 600;
-        }
-        .room-locate{
-            font-size: 6px;
-        }
-        .floor-number { 
-            position: relative;
-            left: 5px;
-            font-size: 20px;
-        }
-        .floor-image-container{
-            position: absolute;
-            width: 50%;
-            height: auto;
-            left: -5%;
-            margin-top: 100px;
-        }
-        .floor-image-container img {
-            width: 100%; /* reduce the size to 70% of its original, adjust as needed */
-            height: auto;
-            margin: 0; /* centering the image if the container is block-level */
-            /* display: block; making the image block level for centering */
+    }
+}
+@media only screen and (min-width: 768px)  {
+    .room {
+        display: flex;
+        /* align-items: flex-start; */
+        margin-bottom: 10px;
+    }
+    .circle {
+        height: 22px;
+        width: 22px;   
+    }
+    .room-name h5{
+        font-size: 15px;
+    }
+    .room-number{
+        position: absolute;
+        left: 80%;
+
+        font-size: 13px;
+        font-weight: 600;
     }
 }
 
-/* footer end */
+/*      */
+
