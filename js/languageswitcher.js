@@ -6,7 +6,7 @@ let lang = [
       "theme": "Основы пожарной безопасности",
       "descriptiontheme" : "Описание",
       "description": "Основы пожарной безопасности это самая важная и нужна вещь...",
-      "share": "Share via :"
+      // "share": "Share via :"
     },
   },
   {
@@ -16,7 +16,7 @@ let lang = [
       "descriptiontheme" : "Description",
       "description": "Fire safety basics is the most important and necessary thing...",
       "flag": "img/modal-img/en-flag.png",
-      "share": "Share via :"
+      // "share": "Share via :"
     },
   },
   {
@@ -26,7 +26,7 @@ let lang = [
       "descriptiontheme" : "Сипаттама",
       "description": "Өрт қауіпсіздігінің негіздері ең маңызды және қажетті зат...",
       "flag": "img/modal-img/kaz-flag.png",
-      "share": "Бөлісу арқылы :"
+      // "share": "Бөлісу арқылы :"
     },
   },
 ];

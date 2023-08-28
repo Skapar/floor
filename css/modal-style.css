@@ -51,7 +51,8 @@ a {
 p {
 	margin: 8px 0;
 }
-.navbar{
+/* .navbar{
+    position: fixed;
     display: flex;
     width: 100%;
     height: 40px;
@@ -61,16 +62,19 @@ p {
     left: 0;
     right: 0;
     text-align: center;
-
     border-bottom: 2px solid #222;
     background: #222;
-}
+} */
 .logo{
-    position:absolute;
-    left: 7%;
-    top: 3%;
-    width: 120px;
+    /* position:absolute; */
+    width: 138px;
     height: 33.83px;
+    position: absolute;
+    /* top: 30%; /* Разместить верхнюю границу изображения на 50% высоты контейнера */
+    /* float: left; Разместить левую границу изображения на 50% ширины контейнера */ 
+    /* transform: translate(-30%, -10%); Сместить изображение на половину его собственной ширины и высоты влево и вверх */
+    
+
     flex-shrink: 0;
 }
 .selected-language {
@@ -78,8 +82,8 @@ p {
     display: inline-block;
     cursor: pointer;
     align-items: center;
-    right: 7%;
-    top: 3%;
+    right: 6%;
+    top: 25%;
 }
 
 #lang-dropdown {
@@ -938,12 +942,12 @@ border-bottom: 2px solid #f14330;
 /*===================
 	footer
 ===================*/
-footer {
+/* footer {
 	background: #191919;
 	text-align: center;
 	padding: 40px 0;
 	display: block;
-}
+} */
 
 footer h6 {
 	color: #ddd;
