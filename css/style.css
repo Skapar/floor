@@ -422,7 +422,7 @@ p {
 /* end of description */
 .floor-grid{
     display: grid;
-    gap: 20px;
+    gap: 2px;
 }
 /* buttons */
 .floor-image-container button{
@@ -434,90 +434,194 @@ p {
     background: none;
     border: none;
     cursor: pointer;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
-.button-z{
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    margin-top: 38%;
-    height: 20%;
-    width: 100%;
-    left: 0;
+
+/*  */
+@media only screen and (max-width: 374px) {
+    
 }
-.button-o{
-    position: absolute;
-    top: 100%;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    left: 0;
+@media only screen and (min-width: 374px) and (max-width: 424px) {
+    
 }
-.button-t{
-    position: absolute;
-    margin-top: 49%;
-    top: 100%;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    left: 0;
+@media only screen and (min-width: 425px) and (max-width: 576px) {
+    .button-v {
+        
+    }
 }
-.button-thr{
-    position: absolute;
-    margin-top: 30%;
-    top: 100%;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    left: 0;
-    padding: 10px;
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .button-v {
+        
+    }
 }
-.button-f{
-    position: absolute;
-    margin-top: 5%;
-    top: 80%;
-    bottom: 0;
-    height: 20%;
-    width: 100%;
-    left: 0;
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .button-v {
+        
+    }
 }
-.button-v  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 20%;
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .button-v {
+        
+    }
 }
-.tolebi0{
-    margin-top: 100%;
-    top: 90%;
-    left: 32%;
+@media only screen and (min-width: 1200px) {
+    .button-v {
+        /* Styles for laptops & desktops here */
+        position: absolute;
+        left: 100%;
+        padding: 10px;
+    }
 }
-.tolebi1{
-    margin-top: 100%;
-    top: 85%;
-    left: 32%; 
+@media only screen and (min-width: 1440px) {
+    .button-v  {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20%;
+    }
+    .tolebi5{
+        position: absolute;
+        top: 100%;
+    }
+    .button-f{
+        position: absolute;
+        top: 95%;
+        height: 20%;
+        width: 100%;
+        left: 0;
+    }
+    .tolebi4{
+        top: 100%;
+        left: 33%;
+    }
+    .kab4{
+        top: 20%;
+        left: 51%;
+    }
+    .abylk4{
+        top: -10%;
+        left: 30%;
+
+    }
+    .panfil4{
+        top: 100%;
+        left: 60%;
+    }
+
+    .button-thr{
+        margin-top: 42%;
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        height: 20%;
+        width: 100%;
+        left: 0;
+    }
+    .tolebi3{
+        top: 100%;
+        left: 32%;
+    }
+    .abylk3{
+        top: -25%;
+        left: 30%;
+
+    }
+    .panfil3{
+        top: 100%;
+        left: 58%;
+    }
+
+    .button-t{
+        position: absolute;
+        margin-top: 80%;
+        top: 100%;
+        height: 20%;
+        width: 100%;
+        left: 0;
+    }
+    .tolebi2{
+        margin-top: 3%;
+        top: 100%;
+        left: 32%;
+    }
+    .kab2{
+        top: 40%;
+        left: 50%;
+    }
+    .abylk2{
+        top: 10%;
+        left: 30%;
+
+    }
+    .panfil2{
+        top: 100%;
+        left: 60%;
+    }
+    
+    .button-o{
+        margin-top: 28%;
+        position: absolute;
+        top: 100%;
+        height: 20%;
+        width: 100%;
+        left: 0;
+    }
+    .tolebi1{
+        margin-top: 100%;
+        top: 100%;
+        left: 32%; 
+    }
+    .kab1{
+        margin-top: 88%;
+        top: 100%;
+        left: 50%;
+    }
+    .abylk1{
+        margin-top: 85%;
+        border: #000 2px solid;
+        top: 100%;
+        left: 30%;
+
+    }
+    .panfil1{
+        margin-top: 98%;
+        top: 100%;
+        left: 60%;
+    }
+
+    .button-z{
+        position: absolute;
+        top: 100%;
+        margin-top: 68%;
+        height: 20%;
+        width: 100%;
+        left: 0;
+    }
+    .tolebi0{
+        margin-top: 100%;
+        top: 100%;
+        left: 32%;
+    }
+    .abylk0{
+        margin-top: 86%;
+        top: 100%;
+        left: 30%;
+
+    }
+    .panfil0{
+        margin-top: 100%;
+        top: 100%;
+        left: 60%;
+    }
+    
 }
-.tolebi2{
-    margin-top: 0%;
-    top: 100%;
-    left: 32%;
+@media only screen and (min-width: 2500px) {
+    .button-v {
+        
+    }
 }
-.tolebi3{
-    margin-top: 8%;
-    top: 0%;
-    left: 32%;
-    border: #000 solid black;
-    padding: 10px;
-}
-.tolebi4{
-    top: 12%;
-    left: 33%;
-}
-.tolebi5{
-    top: 28%;
-    left: 32%;
-}
+/*  */
 
   
 

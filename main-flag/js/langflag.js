@@ -5,7 +5,7 @@ function switchFlag(direction) {
     currentIndex += direction;
     if (currentIndex < 0) currentIndex = flags.length - 1;
     if (currentIndex >= flags.length) currentIndex = 0;
-    document.getElementById("flag").src = "flags-gif/" + flags[currentIndex] + ".gif";
+    document.getElementById("flag").src = "main-flag/" + "flags-gif/" + flags[currentIndex] + ".gif";
 }
 
 function redirectToPage() {
